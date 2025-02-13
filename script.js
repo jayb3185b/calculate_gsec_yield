@@ -5,7 +5,6 @@ const gSecs = [
     { name: "738GS2027", cpn: 7.38, settlement_date: "2022-06-20", maturity_date: "2027-06-20", price: 104.41 },
     { name: "574GS2026", cpn: 5.74, settlement_date: "2021-11-15", maturity_date: "2026-11-15", price: 97.95 }
 ];
-
 function calculateNextCoupon(settlementDate) {
     let cpnDate = new Date(settlementDate);
     let today = new Date();
@@ -14,7 +13,6 @@ function calculateNextCoupon(settlementDate) {
     }
     return cpnDate;
 }
-
 function calculateCouponSchedule(settlementDate, maturityDate) {
     let cpnDate = calculateNextCoupon(settlementDate);
     let paymentDates = [new Date(cpnDate)];
@@ -25,7 +23,6 @@ function calculateCouponSchedule(settlementDate, maturityDate) {
     }
     return paymentDates;
 }
-
 function calculateYield(cpn, settlementDate, maturityDate, price) {
     let cpnDate = calculateNextCoupon(settlementDate);
     let effectiveSettlementDate = new Date(cpnDate);
@@ -61,7 +58,6 @@ function calculateYield(cpn, settlementDate, maturityDate, price) {
     
     return { irr: irr.toFixed(3), xirr: xirr.toFixed(3) };
 }
-
 // Frontend Integration
 function populateDropdown() {
     let dropdown = document.getElementById("gsecDropdown");
@@ -72,7 +68,6 @@ function populateDropdown() {
         dropdown.appendChild(option);
     });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     populateDropdown();
     document.getElementById("calculateButton").addEventListener("click", () => {
