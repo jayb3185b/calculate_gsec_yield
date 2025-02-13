@@ -7,19 +7,22 @@ const gSecs = [
 ];
 
 function calculateYield(cpn, settlement_date, maturity_date, price) {
-    // Dummy placeholder logic for IRR & XIRR calculations
     let irr = ((cpn / price) * 100).toFixed(3);
-    let xirr = ((cpn / price) * 105).toFixed(3); // Simulated XIRR calculation
+    let xirr = ((cpn / price) * 105).toFixed(3);
     return { irr, xirr };
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.getElementById("gsecDropdown");
+    const dropdownContainer = document.getElementById("dropdownContainer");
     const searchInput = document.createElement("input");
     searchInput.setAttribute("type", "text");
     searchInput.setAttribute("placeholder", "Search...");
     searchInput.classList.add("search-input");
-    dropdown.parentNode.insertBefore(searchInput, dropdown);
+    dropdownContainer.appendChild(searchInput);
+    
+    const dropdown = document.createElement("select");
+    dropdown.setAttribute("id", "gsecDropdown");
+    dropdownContainer.appendChild(dropdown);
 
     function populateDropdown(filteredGSecs = gSecs) {
         dropdown.innerHTML = "";
