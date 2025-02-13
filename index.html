@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Sec Yield Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        select, input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; }
+        #result { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>G-Sec Yield Calculator</h2>
+        <label for="gsecDropdown">Select G-Sec:</label>
+        <select id="gsecDropdown"></select>
+        
+        <h3>Security Details</h3>
+        <p id="securityDetails"></p>
+        
+        <label for="askPrice">Enter Ask Price:</label>
+        <input type="number" id="askPrice" step="0.01">
+        
+        <button id="calculateButton">Calculate Yield</button>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
